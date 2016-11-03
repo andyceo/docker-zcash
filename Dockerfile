@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:jessie
 
 MAINTAINER Andrey Andreev <andyceo@yandex.ru> (@andyceo)
 
