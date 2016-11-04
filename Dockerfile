@@ -17,7 +17,7 @@ RUN apt-get update && \
   apt-get autoclean && \
   mkdir -p /root/.zcash-params /root/.zcash
 
-COPY zcash.conf /root/.zcash
+COPY root /root
 
 VOLUME ["/root/.zcash-params", "/root/.zcash"]
 

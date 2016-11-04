@@ -1,7 +1,6 @@
 ## Image Badges
 
-[![](https://images.microbadger.com/badges/image/andyceo/zcash.svg)](https://microbadger.com/images/andyceo/zcash "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/andyceo/zcash.svg)](https://microbadger.com/images/andyceo/zcash "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/andyceo/zcash.svg)](https://microbadger.com/images/andyceo/zcash "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/andyceo/zcash.svg)](https://microbadger.com/images/andyceo/zcash "Get your own version badge on microbadger.com")
 
 ## Download zcash parameters
 
@@ -40,5 +39,5 @@ Will be the same as **Zcash** releases: https://github.com/zcash/zcash/releases
 
 ## Volumes
 
-- **`/root/.zcash-params`** - this volume should contain zcash parameters, that could be obtained with `zcash-fetch-params` command. This volume can be shared with others zcash containers. 
-- **`/root/.zcash`** - this is the `zcash.conf` location, also wallet data, etc.
+- **`/root/.zcash-params:ro`** - this volume should contain zcash parameters, that could be obtained with `zcash-fetch-params` command. This volume can be shared with others zcash containers and can be mounted as read-only. 
+- **`/root/.zcash:rw`** - this is the `zcash.conf` location, also wallet data, etc. Must be mounted with write permissions.
