@@ -9,7 +9,7 @@
     
 ## Run
 
-    sudo docker run -d -v /data/zcash/.zcash-params:/root/.zcash-params:rw -v /data/zcash/.zcash:/root/.zcash:rw -h zcash --name zcash andyceo/zcash
+    sudo docker run -d -v /data/zcash/.zcash-params:/root/.zcash-params:ro -v /data/zcash/.zcash:/root/.zcash:rw -h zcash --name zcash andyceo/zcash
 
 ## Check hashrate
 
