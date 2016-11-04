@@ -1,3 +1,8 @@
+## Image Badges
+
+[![](https://images.microbadger.com/badges/image/andyceo/zcash.svg)](https://microbadger.com/images/andyceo/zcash "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/andyceo/zcash.svg)](https://microbadger.com/images/andyceo/zcash "Get your own version badge on microbadger.com")
+
 ## Download zcash parameters
 
     sudo docker run --rm andyceo/zcash zcash-fetch-params -v /data/zcash/.zcash-params:/root/.zcash-params:rw -v /data/zcash/.zcash:/root/.zcash:rw
