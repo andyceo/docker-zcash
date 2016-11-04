@@ -7,6 +7,8 @@ RUN apt-get update && \
   apt-get install -y --no-install-recommends \
     apt-transport-https \
     ca-certificates \
+    cron \
+    supervisor \
     wget && \
   wget -qO - https://apt.z.cash/zcash.asc | apt-key add - && \
   echo "deb https://apt.z.cash/ jessie main" | tee /etc/apt/sources.list.d/zcash.list && \
@@ -17,8 +19,9 @@ RUN apt-get update && \
   apt-get autoclean && \
   mkdir -p /root/.zcash-params /root/.zcash
 
+COPY etc /etc
 COPY root /root
 
-VOLUME ["/root/.zcash-params", "/root/.zcash"]
+VOLUME ["/root/.zcash-params", "/root/.zcash", "/etc/cron.d/"]
 
-ENTRYPOINT ["/usr/bin/zcashd"]
+ENTRYPOINT ["/usr/bin/supervisord"]

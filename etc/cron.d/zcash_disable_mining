@@ -1,0 +1,3 @@
+# Disable zcash mining
+# Time should be set in UTC!
+0 6 * * * root /root/.zcash/zcash_disable_mining.sh >> /root/.zcash/cron.log 2>&1
