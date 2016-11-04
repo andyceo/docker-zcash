@@ -8,7 +8,7 @@
     
 ## Run
 
-    sudo docker run -d -v /data/zcash/.zcash-params:/root/.zcash-params:ro -v /data/zcash/.zcash:/root/.zcash:rw /data/zcash/cron.d:/etc/cron.d:ro -h zcash --name zcash andyceo/zcash
+    sudo docker run -d -v /data/zcash/.zcash-params:/root/.zcash-params:ro -v /data/zcash/.zcash:/root/.zcash:rw -v /data/zcash/cron.d:/etc/cron.d:ro -h zcash --name zcash andyceo/zcash:cron
 
 ## Check hashrate
 
