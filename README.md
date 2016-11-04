@@ -8,7 +8,7 @@
     
 ## Run
 
-    sudo docker run -d -v /data/zcash/.zcash-params:/root/.zcash-params:ro -v /data/zcash/.zcash:/root/.zcash:rw -h zcash --name zcash andyceo/zcash
+    sudo docker run -d -v /data/zcash/.zcash-params:/root/.zcash-params:ro -v /data/zcash/.zcash:/root/.zcash:rw /data/zcash/cron.d:/etc/cron.d:ro -h zcash --name zcash andyceo/zcash
 
 ## Check hashrate
 
@@ -41,3 +41,4 @@ Will be the same as **Zcash** releases: https://github.com/zcash/zcash/releases
 
 - **`/root/.zcash-params:ro`** - this volume should contain zcash parameters, that could be obtained with `zcash-fetch-params` command. This volume can be shared with others zcash containers and can be mounted as read-only. 
 - **`/root/.zcash:rw`** - this is the `zcash.conf` location, also wallet data, etc. Must be mounted with write permissions.
+- **`/etc/cron.d:ro`** - this is the `cron` configuration directory.
