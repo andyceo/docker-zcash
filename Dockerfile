@@ -13,8 +13,7 @@ RUN apt-get update && \
   apt-get update && \
   apt-get install -y --no-install-recommends zcash && \
   apt-get purge -y \
-    apt-transport-https \
-    wget && \
+    apt-transport-https && \
   apt-get autoclean && \
   mkdir -p /root/.zcash-params /root/.zcash
 

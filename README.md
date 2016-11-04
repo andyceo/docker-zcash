@@ -5,11 +5,11 @@
 
 ## Download zcash parameters
 
-    sudo docker run --rm andyceo/zcash zcash-fetch-params -v /data/zcash/.zcash-params:/root/.zcash-params:rw -v /data/zcash/.zcash:/root/.zcash:rw
+    sudo docker run --rm -v /data/zcash/.zcash-params:/root/.zcash-params:rw -v /data/zcash/.zcash:/root/.zcash:rw --entrypoint zcash-fetch-params andyceo/zcash
     
 ## Run
 
-    sudo docker run -d
+    sudo docker run -d -v /data/zcash/.zcash-params:/root/.zcash-params:rw -v /data/zcash/.zcash:/root/.zcash:rw -h zcash --name zcash andyceo/zcash
 
 ## Check hashrate
 
@@ -36,9 +36,9 @@ where the first number is the real time taken. Divide 10 by this value (converte
 
 ## Releases
 
-will be the same as zcash releases: https://github.com/zcash/zcash/releases
+Will be the same as **Zcash** releases: https://github.com/zcash/zcash/releases
 
 ## Volumes
 
 - **`/root/.zcash-params`** - this volume should contain zcash parameters, that could be obtained with `zcash-fetch-params` command. This volume can be shared with others zcash containers. 
-- **`/root/.zcash`** - this isis `zcash.conf` location, also wallet data, etc.
+- **`/root/.zcash`** - this is the `zcash.conf` location, also wallet data, etc.
