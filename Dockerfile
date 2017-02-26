@@ -2,7 +2,7 @@ FROM debian:jessie
 
 MAINTAINER Andrey Andreev <andyceo@yandex.ru> (@andyceo)
 
-LABEL zcash_version="1.0.2"
+LABEL zcash_version="1.0.6"
 
 RUN apt-get update && \
   apt-get upgrade -y && \
