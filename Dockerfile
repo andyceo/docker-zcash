@@ -8,7 +8,7 @@ RUN apt-get update && \
   echo "deb https://apt.z.cash/ jessie main" | tee /etc/apt/sources.list.d/zcash.list && \
   apt-get update && \
   apt-get install -y --no-install-recommends zcash && \
-  apt-get purge -y apt-transport-https wget && \
+  apt-get purge -y apt-transport-https && \
   apt-get autoclean && \
   mkdir -p /root/.zcash-params /root/.zcash
 COPY root /root
