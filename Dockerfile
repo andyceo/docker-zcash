@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch-slim
 MAINTAINER Andrey Andreev <andyceo@yandex.ru> (@andyceo)
 LABEL zcash_version="1.0.12"
 RUN apt-get update && \
@@ -12,5 +12,5 @@ RUN apt-get update && \
   apt-get autoclean && \
   mkdir -p /root/.zcash-params /root/.zcash
 COPY root /root
-VOLUME ["/root/.zcash-params", "/root/.zcash"]
+VOLUME ["/root"]
 ENTRYPOINT ["/usr/bin/zcashd"]

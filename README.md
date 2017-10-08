@@ -39,5 +39,7 @@ Will be the same as **Zcash** releases: https://github.com/zcash/zcash/releases
 
 ## Volumes
 
-- **`/root/.zcash-params:ro`** - this volume should contain zcash parameters, that could be obtained with `zcash-fetch-params` command. This volume can be shared with others zcash containers and can be mounted as read-only. 
-- **`/root/.zcash:rw`** - this is the `zcash.conf` location, also wallet data, etc. Must be mounted with write permissions.
+Previously, this image had two volumes: `/root/.zcash-params` and `/root/.zcash`. To simplify volume management, and add ability to store user history with `zcash-cli` and other cli tools, it has been changed to just `/root`. 
+
+- **`/root/.zcash-params`** - contains zcash parameters, that could be obtained with `zcash-fetch-params` command.
+- **`/root/.zcash`** - this is the `zcash.conf` location, also wallet data, blockchain data, etc.
